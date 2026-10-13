@@ -171,7 +171,7 @@ class TextMenu : public Menu {
 
   // The number of displayable items is only known after we started drawing the menu (to consider logo, header, etc.)
   // Make it settable after the menu is created
-  void SetMenuHeight(int height) {
+  void SetMenuHeight(int height) override {
     if (!calibrated_height_) {
       max_display_items_ = height / draw_funcs_.MenuItemHeight();
       menu_start_ = std::max(0, (int)selection_ - (int)max_display_items_ + 1);
